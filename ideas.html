@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js" integrity="sha384-3z9MaK46eL6OYkOwhKRM0oaZf4Hh4uXij8jny2aAXq1D89u2+6lTjOfM5ifww+If" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Test_Devina Fitria Pangestuti</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .logo {
+            margin-left: 140px;
+            width: 130px;
+            height: auto;
+            margin-right: 400px;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(255, 104, 0, 1);
+            color: white;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            z-index: 1000;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            padding: 15px 10px;
+            margin-right: 20px;
+            font-size: 15px;
+        }
+
+        .nav-link.active {
+            border-bottom: 3px solid #fff;
+        }
+    </style>
+</head>
+<body>
+    
+    <header class="navbar">
+        <img src="logo.png" alt="Logo" class="logo">
+
+        <a href="index.html" id="nav-work" class="nav-link active">
+            <i class="fas fa-home"></i> Work
+        </a>
+        <a href="about.html" id="nav-about" class="nav-link">
+            <i class="fas fa-address-card"></i> About
+        </a>
+        <a href="service.html" id="nav-services" class="nav-link">
+            <i class="fas fa-concierge-bell"></i> Services
+        </a>
+        <a href="ideas.html" id="nav-ideas" class="nav-link">
+            <i class="fas fa-address-card"></i> Ideas
+        </a>
+        <a href="Careers.html" id="nav-careers" class="nav-link">
+            <i class="fas fa-project-diagram"></i> Careers
+        </a>
+        <a href="Contact.html" id="nav-contact" class="nav-link">
+            <i class="fas fa-project-diagram"></i> Contact
+        </a>
+    </header>
+           <h1>Ideas</h1>
+           <p>
+            Where all our great things begin
+           </p>
+
+    <script>
+        let lastScrollTop = 0;
+
+window.addEventListener('scroll', function () {
+    let st = window.pageYOffset || document.documentElement.scrollTop;
+    const navbar = document.querySelector('.navbar');
+
+    if (st > lastScrollTop) {
+        // untuk saat scroll ke bawah
+        document.body.classList.remove('up');
+        document.body.classList.add('down', 'transparent');
+        navbar.style.backgroundColor = 'rgba(255, 104, 0, 0.68)';
+    } else {
+        // untuk saat scroll ke atas
+        document.body.classList.remove('down');
+        document.body.classList.add('up');
+
+        // untuk memulihkan efek transparan
+        if (st === 0) {
+            document.body.classList.remove('transparent');
+            navbar.style.backgroundColor = 'rgba(255, 104, 0, 1)';
+        }
+    }
+
+    lastScrollTop = st;
+});
+
+        
+function highlightActiveMenu() {
+    const currentPage = window.location.pathname;
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    navLinks.forEach(link => {
+        const linkPath = link.getAttribute('href');
+        const linkId = link.getAttribute('id');
+
+        if (currentPage === linkPath) {
+            link.classList.add('active');
+        } else {
+            link.classList.remove('active');
+        }
+
+        if (currentPage.includes(linkPath)) {
+            link.classList.add('active');
+        } else {
+            link.classList.remove('active');
+        }
+    });
+}
+
+highlightActiveMenu();
+
+    </script>
+    
+</body>
+</html>

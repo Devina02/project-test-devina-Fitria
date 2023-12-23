@@ -1,0 +1,233 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.logo {
+  margin-left: 140px;
+  width: 130px;
+  height: auto;
+  margin-right: 400px;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(255, 104, 0, 1);
+  color: white;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  z-index: 1000;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  padding: 15px 10px;
+  margin-right: 20px;
+  font-size: 15px;
+}
+
+.nav-link.active {
+  border-bottom: 3px solid #fff;
+}
+
+.parallax {
+  position: relative;
+  height: 500px;
+  background-image: url('https://i.pinimg.com/564x/85/7b/fc/857bfcf9942dec79617d5a3f1de8004e.jpg');
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.parallax::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 20%;
+  background: linear-gradient(to bottom right, transparent 100%, white 100%, white 50.5%, transparent 50.5%);
+}
+
+.text h1 {
+  font-size: 75px;
+  margin-bottom: 10px;
+}
+
+.text p {
+  margin-top: 0;
+}
+
+.text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+}
+
+body.down .navbar {
+  transform: translateY(-100%);
+}
+
+body.up .navbar {
+  transform: translateY(0%);
+}
+
+body.transparent .navbar {
+  background-color: rgba(255, 102, 0, 0.68);
+  transition: background-color 0.3s ease;
+}
+
+.parallax::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 20%;
+  background: linear-gradient(to bottom right, transparent 49.5%, white 50%, transparent 50.5%);
+}
+
+.sort-options {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 30px;
+  margin-right: 25px;
+  border-radius: 20px;
+  overflow: hidden;
+  padding: 10px;
+}
+
+.sort-options label {
+  margin-right: 0px;
+}
+
+.sort-options select {
+  margin-right: 10px;
+  border-radius: 20px;
+  padding: 8px;
+}
+
+.form-container {
+  background-color: #f0f0f0;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+  display: none;
+}
+
+.form-container h2 {
+  margin-bottom: 10px;
+}
+
+.form-container label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.form-container input,
+.form-container textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.form-container button {
+  background-color: #ff6800;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form-container button:hover {
+  background-color: #e05a00;
+}
+
+.post-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin: 0 30px;
+}
+
+.card {
+  border: 1px solid #ddd;
+  padding: 15px;
+  text-align: center;
+  border-radius: 15px;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.274);
+}
+
+.card-image {
+  width: 100%;
+  height: auto;
+  max-height: 150px;
+  object-fit: cover;
+}
+
+.card-title {
+  font-size: 1.2em;
+  margin: 10px 0;
+  max-height: 3em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: left; 
+  color: #a09c9c;
+}
+
+.card-description {
+  font-size: 1em;
+  color: black;
+  text-align: left;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.pagination a {
+  color: black;
+  padding: 9px 7px;
+  text-decoration: none;
+  transition: background-color .3s;
+}
+
+.pagination a.active {
+  background-color: rgba(255, 104, 0, 1);
+  color: white;
+  border-radius: 15px;
+}
+
+.pagination a:hover:not(.active) {
+  background-color: rgb(245, 196, 163);
+  border-radius: 15px;
+}
+
+button {
+  background-color: rgba(255, 104, 0, 1);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px; 
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: rgba(255, 104, 0, 0.8);
+}
